@@ -1,0 +1,61 @@
+CCEffect %{
+  techniques:
+  - name: opaque
+    passes:
+    - vert: unlit-vs:vert # builtin header
+      frag: unlit-fs:frag
+      properties: &props
+        mainTexture:    { value: white }
+  - name: transparent
+    passes:
+    - vert: unlit-vs:vert # builtin header
+      frag: unlit-fs:frag
+      blendState:
+        targets:
+        - blend: true
+          blendSrc: src_alpha
+          blendDst: one_minus_src_alpha
+          blendSrcAlpha: src_alpha
+          blendDstAlpha: one_minus_src_alpha
+      properties: *props
+}%
+
+CCProgram unlit-vs %{
+  precision highp float;
+  #include <legacy/input-standard>
+  #include <builtin/uniforms/cc-global>
+  #include <legacy/local-batch>
+
+  out vec2 v_uv;
+  out vec3 v_normal;
+
+  vec4 vert() {
+    StandardVertInput In;
+    CCVertInput(In);
+    vec4 position = In.position;
+    
+    mat4 matWorld, matWorldIT;
+    CCGetWorldMatrixFull(matWorld, matWorldIT);
+
+    v_normal = normalize((matWorldIT * vec4(In.normal.xyz, 0.0)).xyz);
+    v_uv = a_texCoord;
+
+    return cc_matProj * (cc_matView * matWorld) * position;
+  }
+}%
+
+CCProgram unlit-fs %{
+  precision highp float;
+  #include <legacy/output>
+  #include <builtin/uniforms/cc-global>
+
+  in vec2 v_uv;
+  in vec3 v_normal;
+  uniform sampler2D mainTexture;
+
+  vec4 frag() {
+    highp vec2 muv = vec2(cc_matView * vec4(normalize(v_normal), 0))*0.5 + vec2(0.5,0.5);
+    vec4 col = texture(mainTexture, vec2(muv.x, 1.0 - muv.y));
+    return CCFragOutput(col);
+  }
+}%

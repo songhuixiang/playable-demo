@@ -1,0 +1,41 @@
+{
+    "package_version": 2,
+    "name": "ball-config",
+    "version": "0.0.1",
+    "description": "The package template for getting started.",
+    "author": "Cocos Creator",
+    "main": "main.js",
+    "panels": {
+        "default": {
+            "main": "panel/index.js",
+            "type": "dockable",
+            "title": "ball-config",
+            "width": 400,
+            "height": 300
+        }
+    },
+    "main-menu": {
+        "i18n:MAIN_MENU.package.title/ball-config/open": {
+            "message": "ball-config:open"
+        },
+        "i18n:MAIN_MENU.package.title/ball-config/hello": {
+            "message": "ball-config:say-hello"
+        }
+    },
+    "contributions": {
+        "messages": {
+            "open-panel": {
+                "methods": [
+                    "receiveMessage"
+                ]
+            }
+        },
+        "menu": [
+            {
+                "path": "i18n:menu.extension",
+                "label": "Open Ball Config",
+                "message": "open-panel"
+            }
+        ]
+    }
+}

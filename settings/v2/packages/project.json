@@ -1,0 +1,45 @@
+{
+  "__version__": "1.0.6",
+  "general": {
+    "designResolution": {
+      "width": 720,
+      "height": 1280,
+      "fitHeight": true
+    },
+    "highQuality": false
+  },
+  "physics": {
+    "collisionGroups": [
+      {
+        "index": 1,
+        "name": "BALL"
+      },
+      {
+        "index": 2,
+        "name": "THROW_BALL"
+      },
+      {
+        "index": 3,
+        "name": "TOWER_BASE"
+      },
+      {
+        "index": 4,
+        "name": "TOWER"
+      }
+    ],
+    "collisionMatrix": {
+      "0": 1,
+      "1": 30,
+      "2": 2,
+      "3": 10,
+      "4": 2
+    },
+    "gravity": {
+      "y": -50
+    }
+  },
+  "custom_joint_texture_layouts": [],
+  "script": {
+    "preserveSymlinks": true
+  }
+}

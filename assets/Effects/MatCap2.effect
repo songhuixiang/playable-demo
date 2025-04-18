@@ -1,0 +1,65 @@
+CCEffect %{
+  techniques:
+  - name: opaque
+    passes:
+    - vert: unlit-vs:vert # builtin header
+      frag: unlit-fs:frag
+      properties: &props
+        matcap:    { value: white }
+  - name: transparent
+    passes:
+    - vert: unlit-vs:vert # builtin header
+      frag: unlit-fs:frag
+      blendState:
+        targets:
+        - blend: true
+          blendSrc: src_alpha
+          blendDst: one_minus_src_alpha
+          blendSrcAlpha: src_alpha
+          blendDstAlpha: one_minus_src_alpha
+      properties: *props
+}%
+
+CCProgram unlit-vs %{
+  precision highp float;
+  #include <builtin/uniforms/cc-global>
+  #include <builtin/uniforms/cc-local>
+
+  in vec3 a_position;
+  in vec3 a_normal;
+  in vec2 a_texCoord;
+  out vec2 v_uv;
+  out vec3 v_normalWorld;
+  out vec3 v_positionWorld;
+
+  vec4 vert() {
+
+      vec4 pos = cc_matViewProj * cc_matWorld * vec4(a_position, 1.0);
+      v_uv = a_texCoord;
+      v_normalWorld = normalize((cc_matWorld * vec4(a_normal, 0.0)).xyz);
+      v_positionWorld = (cc_matWorld * vec4(a_position, 1.0)).xyz;
+      return pos;
+  }
+}%
+
+CCProgram unlit-fs %{
+  precision highp float;
+  #include <builtin/uniforms/cc-global>
+  #include <builtin/uniforms/cc-local>
+
+  uniform sampler2D matcap;
+  in vec2 v_uv;
+  in vec3 v_normalWorld;
+  in vec3 v_positionWorld;
+
+  vec4 frag() {
+    vec2 uv = vec2(v_uv.x, 1.0 - v_uv.y);
+    vec4 matcapColor = vec4(texture(matcap, uv).rgb, 1.0);
+    vec3 cameraPos = cc_cameraPos.xyz;
+    vec3 viewDir = normalize(cameraPos - v_positionWorld);
+    vec3 reflectDir = reflect(viewDir, normalize(v_normalWorld));
+    vec2 reflectUV = vec2(0.5 * (reflectDir.x + 1.0), 0.5 * (reflectDir.y + 1.0));
+    vec4 finalColor = texture(matcap, reflectUV) * matcapColor;
+    return finalColor;
+  }
+}%

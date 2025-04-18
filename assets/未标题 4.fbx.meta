@@ -1,0 +1,281 @@
+{
+  "ver": "2.3.8",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "418591fc-9d87-476b-b2b2-fb0f44ddb0ce",
+  "files": [],
+  "subMetas": {
+    "24654": {
+      "importer": "texture",
+      "uuid": "418591fc-9d87-476b-b2b2-fb0f44ddb0ce@24654",
+      "displayName": "",
+      "id": "24654",
+      "name": "leaf-2-alpha.jpg-2.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "418591fc-9d87-476b-b2b2-fb0f44ddb0ce@00876"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "30193": {
+      "importer": "gltf-embeded-image",
+      "uuid": "418591fc-9d87-476b-b2b2-fb0f44ddb0ce@30193",
+      "displayName": "",
+      "id": "30193",
+      "name": "leaf-2-spring-1.jpg-0.image",
+      "userData": {
+        "gltfIndex": 0,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".jpg",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "54316": {
+      "importer": "texture",
+      "uuid": "418591fc-9d87-476b-b2b2-fb0f44ddb0ce@54316",
+      "displayName": "",
+      "id": "54316",
+      "name": "leaf-2-spring-1.jpg-0.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "418591fc-9d87-476b-b2b2-fb0f44ddb0ce@30193"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "86915": {
+      "importer": "gltf-material",
+      "uuid": "418591fc-9d87-476b-b2b2-fb0f44ddb0ce@86915",
+      "displayName": "",
+      "id": "86915",
+      "name": "leaf-2-spring-1.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "39a41": {
+      "importer": "gltf-mesh",
+      "uuid": "418591fc-9d87-476b-b2b2-fb0f44ddb0ce@39a41",
+      "displayName": "",
+      "id": "39a41",
+      "name": "Cork_tree.mesh",
+      "userData": {
+        "gltfIndex": 0,
+        "triangleCount": 4224
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "4869c": {
+      "importer": "gltf-mesh",
+      "uuid": "418591fc-9d87-476b-b2b2-fb0f44ddb0ce@4869c",
+      "displayName": "",
+      "id": "4869c",
+      "name": "Branches.mesh",
+      "userData": {
+        "gltfIndex": 1,
+        "triangleCount": 729618
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "c5cad": {
+      "importer": "gltf-mesh",
+      "uuid": "418591fc-9d87-476b-b2b2-fb0f44ddb0ce@c5cad",
+      "displayName": "",
+      "id": "c5cad",
+      "name": "Leaves.mesh",
+      "userData": {
+        "gltfIndex": 2,
+        "triangleCount": 255585
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "764a8": {
+      "importer": "gltf-embeded-image",
+      "uuid": "418591fc-9d87-476b-b2b2-fb0f44ddb0ce@764a8",
+      "displayName": "",
+      "id": "764a8",
+      "name": "leaf-2-spring-1.jpg-1.image",
+      "userData": {
+        "gltfIndex": 1,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".jpg",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "00876": {
+      "importer": "gltf-embeded-image",
+      "uuid": "418591fc-9d87-476b-b2b2-fb0f44ddb0ce@00876",
+      "displayName": "",
+      "id": "00876",
+      "name": "leaf-2-alpha.jpg-2.image",
+      "userData": {
+        "gltfIndex": 2,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".jpg",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "04ed3": {
+      "importer": "texture",
+      "uuid": "418591fc-9d87-476b-b2b2-fb0f44ddb0ce@04ed3",
+      "displayName": "",
+      "id": "04ed3",
+      "name": "leaf-2-spring-1.jpg-1.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "418591fc-9d87-476b-b2b2-fb0f44ddb0ce@764a8"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "5e948": {
+      "importer": "gltf-scene",
+      "uuid": "418591fc-9d87-476b-b2b2-fb0f44ddb0ce@5e948",
+      "displayName": "",
+      "id": "5e948",
+      "name": "未标题 4.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [
+      {
+        "name": "leaf-2-spring-1.jpg",
+        "uri": "418591fc-9d87-476b-b2b2-fb0f44ddb0ce@30193"
+      },
+      {
+        "name": "leaf-2-spring-1.jpg",
+        "uri": "418591fc-9d87-476b-b2b2-fb0f44ddb0ce@764a8"
+      },
+      {
+        "name": "leaf-2-alpha.jpg",
+        "uri": "418591fc-9d87-476b-b2b2-fb0f44ddb0ce@00876"
+      }
+    ],
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "418591fc-9d87-476b-b2b2-fb0f44ddb0ce@5e948",
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    },
+    "assetFinder": {
+      "meshes": [
+        "418591fc-9d87-476b-b2b2-fb0f44ddb0ce@39a41",
+        "418591fc-9d87-476b-b2b2-fb0f44ddb0ce@4869c",
+        "418591fc-9d87-476b-b2b2-fb0f44ddb0ce@c5cad"
+      ],
+      "skeletons": [],
+      "textures": [
+        "418591fc-9d87-476b-b2b2-fb0f44ddb0ce@54316",
+        "418591fc-9d87-476b-b2b2-fb0f44ddb0ce@04ed3",
+        "418591fc-9d87-476b-b2b2-fb0f44ddb0ce@24654"
+      ],
+      "materials": [
+        "418591fc-9d87-476b-b2b2-fb0f44ddb0ce@86915"
+      ],
+      "scenes": [
+        "418591fc-9d87-476b-b2b2-fb0f44ddb0ce@5e948"
+      ]
+    }
+  }
+}
