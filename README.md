@@ -1,3 +1,5 @@
+<div style="text-align: center;"><img src="icon.png" width="25%"></div>
+
 # Bingo 可玩广告构建工具
 
 ## 让广告开发更简单高效
