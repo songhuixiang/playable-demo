@@ -25,6 +25,24 @@ _高效管理多个广告项目的产品界面_
 -   **删除产品**：一键移除不再需要的项目，保持工作区整洁
 -   **产品设置**：自定义产品名称、别名和平台 URL
 
+## SDK 接入说明
+
+在使用 Bingo 工具前，需要在项目中接入 [PlayableSDK.d.ts](./PlayableSDK.d.ts)，该 SDK 提供以下两个主要接口：
+
+1. `download()` - 当用户点击下载按钮时调用此方法
+2. `game_end()` - 当游戏结束时（无论胜利或失败）必须调用此方法
+
+示例用法：
+
+```typescript
+try {
+    PlayableSDK.download(); // 下载按钮点击事件
+    PlayableSDK.game_end(); // 游戏结束时调用
+} catch (error) {
+    console.warn(error);
+}
+```
+
 ## 它能解决您的哪些痛点？
 
 1. 平台适配繁琐 - 不同广告平台有不同的 SDK 要求，Bingo 已为您内置所有适配代码
@@ -44,7 +62,7 @@ _高效管理多个广告项目的产品界面_
 
 ## 构建结果示例
 
-[查看 Bingo 生成的可玩广告示例](https://github.com/songhuixiang/playable-demo/tree/main/build/playables) - 这些是通过 Bingo 工具生成的跨平台广告素材
+[查看 Bingo 生成的可玩广告示例](./build/playables) - 这些是通过 Bingo 工具生成的跨平台广告素材
 
 ## 用户评价
 
