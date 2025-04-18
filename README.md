@@ -12,6 +12,14 @@ Bingo 是一款专为广告开发者打造的桌面应用程序，它能帮助�
 ✅ 直观界面 - 简洁易用的操作界面，降低学习成本
 ✅ 本地测试 - 内置预览功能，快速验证广告效果
 
+## 界面展示
+
+![主界面](主界面截图.png "Bingo主界面")
+*简洁直观的主界面，一键完成广告构建*
+
+![产品管理](产品管理界面.png "产品管理界面")
+*高效管理多个广告项目的产品界面*
+
 ## 它能解决您的哪些痛点？
 
 1. 平台适配繁琐 - 不同广告平台有不同的 SDK 要求，Bingo 已为您内置所有适配代码
@@ -31,10 +39,10 @@ Bingo 是一款专为广告开发者打造的桌面应用程序，它能帮助�
 
 "作为一个独立开发者，Bingo 让我能够以极低成本制作出专业水准的可玩广告。" - 独立游戏制作人
 
-## 下载地址
+## 立即下载
 
-[下载按钮](https://store.cocos.com/app/detail/6507)
+[立即获取 Bingo 应用](https://store.cocos.com/app/detail/6507) - 前往 Cocos 商店购买和下载
 
-## 成果展示
+## 构建结果示例
 
-[生成后的文件](https://github.com/songhuixiang/playable-demo/tree/main/build/playables)
+[查看 Bingo 生成的可玩广告示例](https://github.com/songhuixiang/playable-demo/tree/main/build/playables) - 这些是通过 Bingo 工具生成的跨平台广告素材
