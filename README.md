@@ -1,4 +1,7 @@
-<div style="text-align: center; margin-bottom: 20px;"><img src="icon.png" width="25%"></div>
+<!-- <div style="text-align: center; margin-bottom: 20px;"><img src="icon.png" width="25%"></div> -->
+<p align="center">
+  <img src="icon.png" width="25%">
+</p>
 
 # Bingo 可玩广告构建工具
 
