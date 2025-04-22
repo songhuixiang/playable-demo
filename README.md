@@ -2,6 +2,8 @@
   <img src="icon.png" width="25%">
 </p>
 
+> 🇺🇸 For English users, please refer to [README_EN.md](./README_EN.md) for the English version
+
 # Bingo 可玩广告构建工具
 
 ## 让广告开发更简单高效
