@@ -8,7 +8,7 @@
 
 ## 让广告开发更简单高效
 
-Bingo 是一款专为广告开发者打造的桌面应用程序，它能帮助您快速构建、测试和发布跨平台的 Playable 可玩广告。无论您是面向 Facebook、Unity、AppLovin 还是其他主流广告平台，Bingo 都能为您提供一站式解决方案。
+Bingo 是一款专为广告开发者打造的 Windows 桌面应用程序，它能帮助您快速构建、测试和发布跨平台的 Playable 可玩广告。无论您是面向 Facebook、Unity、AppLovin 还是其他主流广告平台，Bingo 都能为您提供一站式解决方案。
 
 ## 核心价值
 
@@ -23,7 +23,6 @@ Bingo 是一款专为广告开发者打造的桌面应用程序，它能帮助�
 ✅ 支持 Cocos Creator 版本: 3.8.0 - 3.8.6  
 ✅ 全面支持 2D 和 3D 游戏开发  
 ✅ 完全兼容 Cocos Creator 所有功能模块
-✅ 仅支持 Windows 操作系统
 
 ## 界面展示
 
