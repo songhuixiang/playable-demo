@@ -20,6 +20,8 @@ Bingo is a Windows desktop application designed specifically for ad developers, 
 
 ## System Requirements
 
+⚠️ <font color="red" size="3">Important Note: Bingo only supports Windows operating system, not available for macOS</font>
+
 ✅ Supports Cocos Creator versions: 3.8.0 - 3.8.6  
 ✅ Full support for 2D and 3D game development  
 ✅ Fully compatible with all Cocos Creator modules
