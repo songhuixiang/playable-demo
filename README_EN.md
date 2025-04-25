@@ -95,6 +95,6 @@ try {
 
 If you have any questions or feedback, feel free to contact me via:
 
--   QQ: 458264325
--   WeChat: lili993383
 -   email: 458264325@qq.com
+-   WeChat
+    <img src="wechat.jpg" alt="微信" title="微信" style="width: 25%;">

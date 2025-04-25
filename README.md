@@ -95,6 +95,6 @@ try {
 
 如有任何问题或需求反馈，欢迎通过以下方式联系我：
 
--   QQ: 458264325
--   微信: lili993383
 -   email: 458264325@qq.com
+-   微信
+    <img src="wechat.jpg" alt="微信" title="微信" style="width: 25%;">
