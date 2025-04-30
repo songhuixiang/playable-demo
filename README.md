@@ -79,7 +79,7 @@ try {
 
 ## 立即下载
 
-[立即获取 Bingo 应用](https://store.cocos.com/app/detail/6507) - 前往 Cocos 商店购买和下载
+[立即获取 Bingo 应用](https://store.cocos.com/app/detail/7593) - 前往 Cocos 商店购买和下载
 
 ## 构建结果示例
 

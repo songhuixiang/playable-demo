@@ -79,7 +79,7 @@ try {
 
 ## Download Now
 
-[Get Bingo App Now](https://store.cocos.com/app/detail/6507) - Go to Cocos Store to purchase and download
+[Get Bingo App Now](https://store.cocos.com/app/detail/7593) - Go to Cocos Store to purchase and download
 
 ## Example Build Results
 
