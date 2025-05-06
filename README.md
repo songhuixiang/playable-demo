@@ -77,6 +77,10 @@ try {
 📱 广告代理商 - 同时管理多个客户项目的广告构建需求  
 🏆 独立开发者 - 无需搭建复杂环境，个人电脑即可完成专业级广告开发
 
+## 体验版本
+
+[获取 GitHub 体验版](https://github.com/songhuixiang/playable-demo/releases) - 下载最新的体验版本，抢先体验新功能
+
 ## 立即下载
 
 [立即获取 Bingo 应用](https://store.cocos.com/app/detail/7593) - 前往 Cocos 商店购买和下载

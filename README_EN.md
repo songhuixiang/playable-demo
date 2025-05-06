@@ -77,6 +77,10 @@ try {
 📱 Ad Agencies - Manage ad building needs for multiple client projects simultaneously  
 🏆 Indie Developers - No need to set up a complex environment, professional-grade ad development can be done on a personal computer
 
+## Trial Version
+
+[Get GitHub Trial Version](https://github.com/songhuixiang/playable-demo/releases) - Download the latest trial version to experience new features first
+
 ## Download Now
 
 [Get Bingo App Now](https://store.cocos.com/app/detail/7593) - Go to Cocos Store to purchase and download
