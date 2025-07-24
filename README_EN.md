@@ -15,13 +15,12 @@ Bingo is a Windows desktop application designed specifically for ad developers, 
 ✅ Multi-platform Support - Built-in integration with 10+ mainstream ad platform SDKs, no need for repeated development  
 ✅ One-click Build - Automated packaging process, say goodbye to tedious manual operations  
 ✅ Exclusive Features - Advanced compression options to optimize ad package size and performance  
-✅ Intuitive Interface - Simple and easy-to-use UI, reducing the learning curve  
+✅ Intuitive Interface - Simple and easy-to-use UI with Chinese/English language switching, reducing the learning curve  
 ✅ Local Testing - Built-in preview function for quick validation of package size
 
 ## System Requirements
 
-**⚠️ Important Note: Bingo only supports Windows operating system, not available for macOS**
-
+✅ Supports Windows and macOS operating systems  
 ✅ Supports Cocos Creator versions: 3.8.0 - 3.8.6  
 ✅ Full support for 2D and 3D game development  
 ✅ Fully compatible with all Cocos Creator modules
@@ -30,7 +29,7 @@ Bingo is a Windows desktop application designed specifically for ad developers, 
 
 ![Main Interface](主界面截图.png "Bingo Main Interface")
 
-_Simple and intuitive main interface, supports light/dark themes, one-click ad building_
+_Simple and intuitive main interface, supports light/dark themes and Chinese/English language switching, one-click ad building_
 
 ![Product Management](产品管理界面.png "Product Management Interface")
 _Efficiently manage multiple ad projects_
@@ -48,21 +47,72 @@ _Clear overview of ad channel material specifications_
 
 ## SDK Integration Guide
 
-Before using the Bingo tool, you need to integrate [PlayableSDK.d.ts](./PlayableSDK.d.ts) into your project. This SDK provides the following two main interfaces:
+Before using the Bingo tool, you need to integrate [PlayableSDK.d.ts](./PlayableSDK.d.ts) into your project. This SDK provides the following main interfaces:
 
+### Core Interfaces
 1. `download()` - Call this method when the user clicks the download button
 2. `game_end()` - Must be called when the game ends (whether win or lose)
+3. `channel` - Get the current advertising channel (read-only property)
 
-Sample usage:
+### Lifecycle Callback Interfaces
+4. `onMute(callback)` - Register mute callback function
+5. `onUnmute(callback)` - Register unmute callback function
+6. `onPause(callback)` - Register pause callback function
+7. `onResume(callback)` - Register resume callback function
+
+### Basic Usage Example:
 
 ```typescript
 try {
     PlayableSDK.download(); // Download button click event
     PlayableSDK.game_end(); // Call when the game ends
+    
+    // Get current advertising channel
+    console.log('Current channel:', PlayableSDK.channel);
 } catch (error) {
     console.warn(error);
 }
 ```
+
+### Lifecycle Management Example:
+
+```typescript
+// Register lifecycle callbacks
+PlayableSDK.onMute(() => {
+    // Mute game audio
+    AudioManager.muteAll();
+});
+
+PlayableSDK.onUnmute(() => {
+    // Unmute game audio
+    AudioManager.unmuteAll();
+});
+
+PlayableSDK.onPause(() => {
+    // Pause the game
+    GameManager.pause();
+});
+
+PlayableSDK.onResume(() => {
+    // Resume the game
+    GameManager.resume();
+});
+```
+
+## Important Configuration Notes
+
+### Build Configuration Precautions
+
+**⚠️ Important Notice: When building your project with Cocos Creator, please make sure NOT to check the "MD5 Cache" option**
+
+<img src="MD5_cache.png" alt="MD5 Cache Configuration" title="Do not check MD5 Cache option when building" width="60%">
+
+Checking MD5 Cache can cause playable ads to malfunction on certain platforms because:
+- MD5 caching changes the naming convention of resource files
+- Some ad platforms have strict requirements for file names
+- May cause resource loading failures or path errors
+
+**Correct approach:** Ensure the "MD5 Cache" option remains unchecked in the build settings.
 
 ## What Problems Does It Solve for You?
 

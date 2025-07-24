@@ -15,13 +15,12 @@ Bingo 是一款专为广告开发者打造的 Windows 桌面应用程序，它�
 ✅ 多平台支持 - 内置 10+ 主流广告平台 SDK 集成，无需重复开发  
 ✅ 一键构建 - 自动化打包流程，告别繁琐的手动操作  
 ✅ 专属功能 - 高级压缩选项，优化广告包体积和性能  
-✅ 直观界面 - 简洁易用的操作界面，降低学习成本  
+✅ 直观界面 - 简洁易用的操作界面，支持中英文界面切换，降低学习成本  
 ✅ 本地测试 - 内置预览功能，快速验证包体大小
 
 ## 系统要求
 
-**⚠️ 重要提示：Bingo 仅支持 Windows 操作系统，暂不支持 macOS**
-
+✅ 支持 Windows 和 macOS 操作系统  
 ✅ 支持 Cocos Creator 版本: 3.8.0 - 3.8.6  
 ✅ 全面支持 2D 和 3D 游戏开发  
 ✅ 完全兼容 Cocos Creator 所有功能模块
@@ -30,7 +29,7 @@ Bingo 是一款专为广告开发者打造的 Windows 桌面应用程序，它�
 
 ![主界面](主界面截图.png "Bingo主界面")
 
-_简洁直观的主界面，支持亮色/暗色主题，一键完成广告构建_
+_简洁直观的主界面，支持亮色/暗色主题和中英文界面切换，一键完成广告构建_
 
 ![产品管理](产品管理界面.png "产品管理界面")
 _高效管理多个广告项目的产品界面_
@@ -48,21 +47,72 @@ _一目了然的广告渠道素材规范界面_
 
 ## SDK 接入说明
 
-在使用 Bingo 工具前，需要在项目中接入 [PlayableSDK.d.ts](./PlayableSDK.d.ts)，该 SDK 提供以下两个主要接口：
+在使用 Bingo 工具前，需要在项目中接入 [PlayableSDK.d.ts](./PlayableSDK.d.ts)，该 SDK 提供以下主要接口：
 
+### 核心接口
 1. `download()` - 当用户点击下载按钮时调用此方法
 2. `game_end()` - 当游戏结束时（无论胜利或失败）必须调用此方法
+3. `channel` - 获取当前运行的广告渠道（只读属性）
 
-示例用法：
+### 生命周期回调接口
+4. `onMute(callback)` - 注册静音回调函数
+5. `onUnmute(callback)` - 注册取消静音回调函数
+6. `onPause(callback)` - 注册暂停回调函数
+7. `onResume(callback)` - 注册恢复回调函数
+
+### 基础用法示例：
 
 ```typescript
 try {
     PlayableSDK.download(); // 下载按钮点击事件
     PlayableSDK.game_end(); // 游戏结束时调用
+    
+    // 获取当前广告渠道
+    console.log('当前渠道:', PlayableSDK.channel);
 } catch (error) {
     console.warn(error);
 }
 ```
+
+### 生命周期管理示例：
+
+```typescript
+// 注册生命周期回调
+PlayableSDK.onMute(() => {
+    // 静音游戏音效
+    AudioManager.muteAll();
+});
+
+PlayableSDK.onUnmute(() => {
+    // 恢复游戏音效
+    AudioManager.unmuteAll();
+});
+
+PlayableSDK.onPause(() => {
+    // 暂停游戏
+    GameManager.pause();
+});
+
+PlayableSDK.onResume(() => {
+    // 恢复游戏
+    GameManager.resume();
+});
+```
+
+## 重要配置说明
+
+### 打包配置注意事项
+
+**⚠️ 重要提示：在使用 Cocos Creator 打包项目时，请务必不要勾选 "MD5 Cache" 选项**
+
+<img src="MD5_cache.png" alt="MD5 Cache配置" title="打包时请勿勾选MD5 Cache选项" width="60%">
+
+勾选 MD5 Cache 会导致可玩广告在某些平台上无法正常运行，因为：
+- MD5 缓存会改变资源文件的命名规则
+- 部分广告平台对文件名有严格要求
+- 可能导致资源加载失败或路径错误
+
+**正确做法：** 在构建设置中确保 "MD5 Cache" 选项保持未勾选状态。
 
 ## 它能解决您的哪些痛点？
 
