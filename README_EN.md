@@ -12,7 +12,10 @@ Bingo is a Windows desktop application designed specifically for ad developers, 
 
 ## Core Values
 
-✅ Multi-platform Support - Built-in integration with 10+ mainstream ad platform SDKs, no need for repeated development  
+✅ Multi-platform Support - Built-in integration with 14 mainstream ad platform SDKs, no need for repeated development
+   - AppLovin, BIGO, Chartboost, Facebook, Google
+   - ironSource, Liftoff, Mintegral, Moloco, PureHTML
+   - Tencent, TikTok, Unity, Vungle  
 ✅ One-click Build - Automated packaging process, say goodbye to tedious manual operations  
 ✅ Exclusive Features - Advanced compression options to optimize ad package size and performance  
 ✅ Intuitive Interface - Simple and easy-to-use UI with Chinese/English language switching, reducing the learning curve  
