@@ -8,14 +8,16 @@
 
 ## Make Ad Development Easier and More Efficient
 
-Bingo is a Windows desktop application designed specifically for ad developers, helping you quickly build, test, and publish cross-platform playable ads. Whether you are targeting Facebook, Unity, AppLovin, or other mainstream ad platforms, Bingo provides a one-stop solution.
+Bingo is a cross-platform desktop application specifically designed for advertising developers, helping you quickly build, test, and publish cross-platform Playable ads. Whether you're targeting Facebook, Unity, AppLovin, or other mainstream advertising platforms, Bingo provides you with a one-stop solution.
 
 ## Core Values
 
 ✅ Multi-platform Support - Built-in integration with 14 mainstream ad platform SDKs, no need for repeated development
+
    - AppLovin, BIGO, Chartboost, Facebook, Google
    - ironSource, Liftoff, Mintegral, Moloco, PureHTML
    - Tencent, TikTok, Unity, Vungle  
+
 ✅ One-click Build - Automated packaging process, say goodbye to tedious manual operations  
 ✅ Exclusive Features - Advanced compression options to optimize ad package size and performance  
 ✅ Intuitive Interface - Simple and easy-to-use UI with Chinese/English language switching, reducing the learning curve  
@@ -23,10 +25,10 @@ Bingo is a Windows desktop application designed specifically for ad developers, 
 
 ## System Requirements
 
-✅ Supports Windows and macOS operating systems  
+✅ Supports Windows and macOS operating systems (only supports Apple Silicon M1/M2/M3/M4 chips)  
 ✅ Supports Cocos Creator versions: 3.8.0 - 3.8.6  
 ✅ Full support for 2D and 3D game development  
-✅ Fully compatible with all Cocos Creator modules
+✅ Fully compatible with all Cocos Creator feature modules
 
 ## UI Showcase
 
