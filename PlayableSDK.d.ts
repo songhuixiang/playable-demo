@@ -4,17 +4,19 @@
  */
 declare enum CHANNEL {
     AppLovin = "AppLovin",
+    BIGO = "BIGO",
+    Chartboost = "Chartboost",
     Facebook = "Facebook",
-    Unity = "Unity",
-    Mintegral = "Mintegral",
     Google = "Google",
     ironSource = "ironSource",
-    TikTok = "TikTok",
-    Vungle = "Vungle",
+    Liftoff = "Liftoff",
+    Mintegral = "Mintegral",
     Moloco = "Moloco",
-    Chartboost = "Chartboost",
-    NoAdSDK = "纯净HTML",
-    Tencent = "Tencent"
+    PureHTML = "PureHTML",
+    Tencent = "Tencent",
+    TikTok = "TikTok",
+    Unity = "Unity",
+    Vungle = "Vungle",
 }
 
 /**
