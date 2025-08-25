@@ -26,7 +26,7 @@ Bingo 是一款专为广告开发者打造的跨平台桌面应用程序，它�
 ## 系统要求
 
 ✅ 支持 Windows 和 macOS 操作系统（仅支持 Apple Silicon M1/M2/M3/M4 芯片）  
-✅ 支持 Cocos Creator 版本: 3.8.0 - 3.8.6  
+✅ 支持 Cocos Creator 版本: 3.8.0 - 3.8.7  
 ✅ 全面支持 2D 和 3D 游戏开发  
 ✅ 完全兼容 Cocos Creator 所有功能模块
 
