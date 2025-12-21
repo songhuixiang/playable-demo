@@ -119,6 +119,16 @@ Checking MD5 Cache can cause playable ads to malfunction on certain platforms be
 
 **Correct approach:** Ensure the "MD5 Cache" option remains unchecked in the build settings.
 
+### Platform Testing Precautions
+
+**⚠️ Compatibility Issue with `document.write()`**
+
+Some users may encounter issues where playable ads fail to display properly when testing on platform tools like AppLovin. This is typically caused by modern browsers (Chrome 55+) imposing stricter restrictions on the `document.write()` method, which may trigger `Violation` warnings in the console.
+
+**Solutions:**
+- Try using a different browser for testing (e.g., Safari), as different browsers have varying levels of restrictions on `document.write()`
+- If the ad doesn't display in platform testing tools, try opening the HTML file directly in your local browser for testing
+
 ## What Problems Does It Solve for You?
 
 1. Tedious platform adaptation - Different ad platforms have different SDK requirements, Bingo has built-in all adaptation code for you
