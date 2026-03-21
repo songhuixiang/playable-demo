@@ -225,6 +225,7 @@ PlayableSDK.onResume(() => {
 部分用户在 AppLovin 等平台的测试工具中测试可玩广告时，可能会遇到广告无法正常显示的问题。这通常是由于现代浏览器（Chrome 55+）对 `document.write()` 方法有更严格的限制，控制台可能会显示 `Violation` 警告。
 
 **解决方案：**
+- 使用 **Chrome 无痕模式**（Ctrl/Cmd + Shift + N）打开平台测试工具，通常可以正常显示
 - 尝试使用其他浏览器进行测试（如 Safari），因为不同浏览器对 `document.write()` 的限制程度不同
 - 如果在平台测试工具中无法显示，请尝试在本地浏览器中直接打开 HTML 文件进行测试
 
