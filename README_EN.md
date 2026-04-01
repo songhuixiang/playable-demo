@@ -133,7 +133,7 @@ Bingo automatically compares file sizes before and after compression:
 - If compressed size is **smaller**, use the compressed version
 - If compressed size is **larger**, automatically keep the original
 
-This ensures compression is always beneficial and won't increase package size.
+This ensures compression is always beneficial and won't increase package size. Additionally, Bingo uses **Base122 encoding** to embed game assets, reducing data expansion from ~33% (Base64) to ~14%, further shrinking the final file size.
 
 ## SDK Integration Guide
 
@@ -228,6 +228,19 @@ Some users may encounter issues where playable ads fail to display properly when
 - Open the platform testing tool in **Chrome Incognito Mode** (Ctrl/Cmd + Shift + N)—this usually resolves the display issue
 - Try using a different browser for testing (e.g., Safari), as different browsers have varying levels of restrictions on `document.write()`
 - If the ad doesn't display in platform testing tools, try opening the HTML file directly in your local browser for testing
+
+**⚠️ Errors Caused by Chrome Extension Injection**
+
+When previewing playable ads locally in regular Chrome mode, you may see console errors like:
+
+```
+TypeError: Cannot read properties of null (reading 'getAssembler')
+    at inject.js:1
+```
+
+The `inject.js` at the bottom of the call stack is a **script injected by a browser extension**, not a bug in your playable ad. Certain extensions (e.g., performance monitors, ad analytics tools) inject nodes into the page, causing the Cocos engine to throw this error. **This error does not affect actual gameplay.** Real users viewing ads inside Facebook/Instagram or other platform WebViews have no browser extensions, so they will never encounter this issue.
+
+**Solution:** Preview in **Chrome Incognito Mode** (Ctrl/Cmd + Shift + N). Incognito mode disables all extensions by default, giving you a clean test environment that matches real ad delivery conditions.
 
 ## Example Build Results
 
