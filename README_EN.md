@@ -10,24 +10,54 @@
 
 Bingo is a cross-platform desktop application specifically designed for advertising developers, helping you quickly build, test, and publish cross-platform Playable ads. Whether you're targeting Facebook, Unity, AppLovin, or other mainstream advertising platforms, Bingo provides you with a one-stop solution.
 
+## Table of Contents
+
+- [Core Values](#core-values)
+- [UI Showcase](#ui-showcase)
+- [System Requirements](#system-requirements)
+- [Get Bingo](#get-bingo)
+- [Prerequisites: SDK Integration](#prerequisites-sdk-integration)
+- [Quick Start](#quick-start)
+- [Image Compression](#image-compression)
+- [Important Configuration Notes](#important-configuration-notes)
+- [Example Build Results](#example-build-results)
+- [Contact Us](#contact-us)
+
 ## Core Values
 
-✅ Multi-platform Support - Built-in integration with 14 mainstream ad platform SDKs, no need for repeated development
+✅ **Multi-platform Coverage** - Built-in SDKs for 14 mainstream ad platforms, one build outputs all channel assets with no repeated development
 
    - AppLovin, BIGO, Chartboost, Facebook, Google
    - ironSource, Liftoff, Mintegral, Moloco, PureHTML
-   - Tencent, TikTok, Unity, Vungle  
+   - Tencent, TikTok, Unity, Vungle
 
-✅ One-click Build - Automated packaging process, say goodbye to tedious manual operations  
-✅ Exclusive Features - Advanced compression options to optimize ad package size and performance  
-✅ Intuitive Interface - Simple and easy-to-use UI with Chinese/English language switching, reducing the learning curve  
-✅ Local Testing - Built-in preview function for quick validation of package size
+✅ **Extreme Package Compression** - Built-in WebP image compression engine with Base122 encoding (reduces data expansion from ~33% with Base64 to ~14%), helping your ads easily meet platform file size limits
 
-## Use Cases
+✅ **Zero Setup** - No complex build environment required, ready to use after installation; with SDK integrated, 4 steps take you from Cocos Creator to cross-platform ad assets
 
-🎮 **Game Developers** - Quickly create playable ads for your games to improve user conversion rates  
-📱 **Ad Agencies** - Manage ad building needs for multiple client projects simultaneously  
-🏆 **Indie Developers** - No need to set up a complex environment, professional-grade ad development can be done on a personal computer
+✅ **Real-time Local Preview** - Built-in preview function to verify ad interaction and cross-channel compatibility before building, reducing costly re-submission cycles
+
+✅ **Simplified Professional Interface** - Supports Chinese/English switching and light/dark themes; platform specs and testing tools accessible on one screen, reducing learning and maintenance overhead
+
+## UI Showcase
+
+![Main Interface](主界面截图.png "Bingo Main Interface")
+
+_Simple and intuitive main interface, supports light/dark themes and Chinese/English language switching, one-click ad building_
+
+![Product Management](产品管理界面.png "Product Management Interface")
+_Efficiently manage multiple ad projects_
+
+-   **Add Product**: Quickly import new ad projects and easily manage multiple projects
+-   **Delete Product**: Remove unnecessary projects with one click to keep your workspace tidy
+-   **Product Settings**: Customize product name, alias, and platform URL
+
+![Ad Channel Material Specs](广告渠道素材规范.png "Ad Channel Material Specs Interface")
+_Clear overview of ad channel material specifications_
+
+-   **Platform Requirements**: Display material specs for major ad platforms, including file size limits and format requirements
+-   **Testing Tools**: Provide links to testing tools for each platform for quick ad material validation
+-   **App Preview**: Support previewing ad effects in the test app
 
 ## System Requirements
 
@@ -51,36 +81,78 @@ Bingo is a cross-platform desktop application specifically designed for advertis
 
 > 💡 **Version Update Notice**: Due to the lengthy review process on Cocos Store, the store version may have some delay. If you find that the store version is not the latest, you can proceed with the purchase and then contact us via email (458264325@qq.com) or WeChat with your payment receipt screenshot to receive the same latest version as the trial version.
 
-## UI Showcase
+## Prerequisites: SDK Integration
 
-![Main Interface](主界面截图.png "Bingo Main Interface")
+Before using Bingo to build ads, you need to integrate [PlayableSDK.d.ts](./PlayableSDK.d.ts) into your Cocos Creator project. **This step must be completed during game development.** Once the SDK is integrated, your ads will be able to redirect to the app store and respond to platform audio/pause controls.
 
-_Simple and intuitive main interface, supports light/dark themes and Chinese/English language switching, one-click ad building_
+### Core Interfaces
 
-![Product Management](产品管理界面.png "Product Management Interface")
-_Efficiently manage multiple ad projects_
+#### 1. `download()` - Redirect to App Store
+Call this method when the user clicks the download button (CTA) or end card to trigger app store redirect.
 
--   **Add Product**: Quickly import new ad projects and easily manage multiple projects
--   **Delete Product**: Remove unnecessary projects with one click to keep your workspace tidy
--   **Product Settings**: Customize product name, alias, and platform URL
+#### 2. `game_end()` - Game End Notification
+Must be called when the game ends (whether win or lose).
 
-![Ad Channel Material Specs](广告渠道素材规范.png "Ad Channel Material Specs Interface")
-_Clear overview of ad channel material specifications_
+> ⚠️ **Important**: Some ad platforms (like Mintegral, Vungle) **require** this method to be called, otherwise it may cause abnormal ad behavior or inaccurate statistics.
 
--   **Platform Requirements**: Display material specs for major ad platforms, including file size limits and format requirements
--   **Testing Tools**: Provide links to testing tools for each platform for quick ad material validation
--   **App Preview**: Support previewing ad effects in the test app
+#### 3. `channel` - Get Current Channel (Read-only)
+Get the current advertising channel, can be used to implement channel-specific logic:
+
+```typescript
+if (PlayableSDK.channel === 'Facebook') {
+    // Facebook specific logic
+} else if (PlayableSDK.channel === 'TikTok') {
+    // TikTok specific logic
+}
+```
+
+### Lifecycle Callback Interfaces
+
+#### 4. `onMute(callback)` / `onUnmute(callback)` - Audio Control
+Register mute/unmute callback functions to respond to platform audio control requests.
+
+#### 5. `onPause(callback)` / `onResume(callback)` - Pause/Resume
+Register pause/resume callback functions. These callbacks are triggered in the following scenarios:
+
+| Callback | Trigger Scenarios |
+|----------|-------------------|
+| `onPause` | User clicks download button to go to store, ad goes to background, ad loses focus |
+| `onResume` | User returns from store, ad returns to foreground, ad regains focus |
+
+**Best Practices**:
+- In `onPause`, pause game animations, sound effects, and timers
+- In `onResume`, restore game state, or consider showing the end card directly
+
+### Complete Example
+
+```typescript
+PlayableSDK.onMute(() => {
+    AudioManager.muteAll();
+});
+
+PlayableSDK.onUnmute(() => {
+    AudioManager.unmuteAll();
+});
+
+PlayableSDK.onPause(() => {
+    GameManager.pause();
+});
+
+PlayableSDK.onResume(() => {
+    GameManager.resume();
+});
+```
 
 ## Quick Start
 
-Just 4 steps to build your playable ads:
+After completing SDK integration, just 4 steps to build your playable ads:
 
 ### Step 1: Build Project in Cocos Creator
 
 1. Open your Cocos Creator project
 2. Select menu "Project" → "Build"
 3. Choose "Web Mobile" as the target platform
-4. ⚠️ **Important**: Make sure NOT to check the "MD5 Cache" option
+4. ⚠️ **Important**: Make sure NOT to check the "MD5 Cache" option (see [Build Configuration Precautions](#build-configuration-precautions))
 5. Click "Build" button and wait for completion
 
 ### Step 2: Configure Project Paths
@@ -135,74 +207,6 @@ Bingo automatically compares file sizes before and after compression:
 
 This ensures compression is always beneficial and won't increase package size. Additionally, Bingo uses **Base122 encoding** to embed game assets, reducing data expansion from ~33% (Base64) to ~14%, further shrinking the final file size.
 
-## SDK Integration Guide
-
-Before using the Bingo tool, you need to integrate [PlayableSDK.d.ts](./PlayableSDK.d.ts) into your project. This SDK provides the following main interfaces:
-
-### Core Interfaces
-
-#### 1. `download()` - Redirect to App Store
-Call this method when the user clicks the download button (CTA) or end card to trigger app store redirect.
-
-#### 2. `game_end()` - Game End Notification
-Must be called when the game ends (whether win or lose).
-
-> ⚠️ **Important**: Some ad platforms (like Mintegral, Vungle) **require** this method to be called, otherwise it may cause abnormal ad behavior or inaccurate statistics.
-
-#### 3. `channel` - Get Current Channel (Read-only)
-Get the current advertising channel, can be used to implement channel-specific logic:
-
-```typescript
-// Display different content based on channel
-if (PlayableSDK.channel === 'Facebook') {
-    // Facebook specific logic
-} else if (PlayableSDK.channel === 'TikTok') {
-    // TikTok specific logic
-}
-```
-
-### Lifecycle Callback Interfaces
-
-#### 4. `onMute(callback)` / `onUnmute(callback)` - Audio Control
-Register mute/unmute callback functions to respond to platform audio control requests.
-
-#### 5. `onPause(callback)` / `onResume(callback)` - Pause/Resume
-Register pause/resume callback functions. These callbacks are triggered in the following scenarios:
-
-| Callback | Trigger Scenarios |
-|----------|-------------------|
-| `onPause` | User clicks download button to go to store, ad goes to background, ad loses focus |
-| `onResume` | User returns from store, ad returns to foreground, ad regains focus |
-
-**Best Practices**:
-- In `onPause`, pause game animations, sound effects, and timers
-- In `onResume`, restore game state, or consider showing end card directly
-
-### Complete Example:
-
-```typescript
-// Register lifecycle callbacks
-PlayableSDK.onMute(() => {
-    // Mute game audio
-    AudioManager.muteAll();
-});
-
-PlayableSDK.onUnmute(() => {
-    // Unmute game audio
-    AudioManager.unmuteAll();
-});
-
-PlayableSDK.onPause(() => {
-    // Pause the game
-    GameManager.pause();
-});
-
-PlayableSDK.onResume(() => {
-    // Resume the game
-    GameManager.resume();
-});
-```
-
 ## Important Configuration Notes
 
 ### Build Configuration Precautions
@@ -246,12 +250,6 @@ The `inject.js` at the bottom of the call stack is a **script injected by a brow
 
 [View Playable Ad Examples Generated by Bingo](./build/playables) - These are cross-platform ad materials generated by the Bingo tool
 
-## User Testimonials
-
-"After using Bingo, our ad build time was reduced from 2 hours to 10 minutes, and team efficiency increased by 90%!" - Technical Director of a well-known game company
-
-"As an indie developer, Bingo allows me to create professional-quality playable ads at a very low cost." - Indie Game Producer
-
 ## Contact Us
 
 If you have any questions or feedback, feel free to contact me via:
@@ -259,4 +257,4 @@ If you have any questions or feedback, feel free to contact me via:
 -   email: 458264325@qq.com
 -   WeChat
 
-    <img src="wechat.jpg" alt="微信" title="微信" style="width: 25%;">
+    <img src="wechat.jpg" alt="WeChat" title="WeChat" style="width: 25%;">
