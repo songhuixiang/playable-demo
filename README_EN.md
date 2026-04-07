@@ -35,8 +35,6 @@ Bingo is a cross-platform desktop application specifically designed for advertis
 
 ✅ **Zero Setup** - No complex build environment required, ready to use after installation; with SDK integrated, 4 steps take you from Cocos Creator to cross-platform ad assets
 
-✅ **Real-time Local Preview** - Built-in preview function to verify ad interaction and cross-channel compatibility before building, reducing costly re-submission cycles
-
 ✅ **Simplified Professional Interface** - Supports Chinese/English switching and light/dark themes; platform specs and testing tools accessible on one screen, reducing learning and maintenance overhead
 
 ## UI Showcase
