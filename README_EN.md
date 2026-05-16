@@ -25,10 +25,11 @@ Bingo is a cross-platform desktop application specifically designed for advertis
 
 ## Core Values
 
-✅ **Multi-platform Coverage** - Built-in SDKs for 14 mainstream ad platforms, one build outputs all channel assets with no repeated development
+✅ **Multi-platform Coverage** - Built-in SDKs for 20+ mainstream ad platforms, one build outputs all channel assets with no repeated development
 
-   - AppLovin, BIGO, Chartboost, Facebook, Google
-   - ironSource, Liftoff, Mintegral, Moloco, PureHTML
+   - AdColony, AppLovin, BIGO, Chartboost, Facebook, Google
+   - InMobi, ironSource, Kuaishou, Kwai, Liftoff, Mintegral
+   - Moloco, MyTarget, OceanEngine, Pangle, Snapchat
    - Tencent, TikTok, Unity, Vungle
 
 ✅ **Extreme Package Compression** - Built-in WebP image compression engine with Base122 encoding (reduces data expansion from ~33% with Base64 to ~14%), helping your ads easily meet platform file size limits
