@@ -22,15 +22,17 @@ Bingo is a cross-platform desktop application specifically designed for advertis
 - [Important Configuration Notes](#important-configuration-notes)
 - [Example Build Results](#example-build-results)
 - [Contact Us](#contact-us)
+- [Changelog](#changelog)
 
 ## Core Values
 
 ✅ **Multi-platform Coverage** - Built-in SDKs for 20+ mainstream ad platforms, one build outputs all channel assets with no repeated development
 
-   - AdColony, AppLovin, BIGO, Chartboost, Facebook, Google
-   - InMobi, ironSource, Kuaishou, Kwai, Liftoff, Mintegral
-   - Moloco, MyTarget, OceanEngine, Pangle, Snapchat
-   - Tencent, TikTok, Unity, Vungle
+   - AppLovin, BIGO, Chartboost, Facebook, Google, InMobi
+   - ironSource, Kuaishou, Kwai, Liftoff, Mintegral, Moloco
+   - MyTarget, OceanEngine, Pangle, Snapchat, Tencent, TikTok
+   - Unity, Unity Playworks (Luna), Vungle
+   - Plus a **generic MRAID** build: one output runs on any MRAID-compliant long-tail platform (e.g. Aarki, Adikteev, BigaBid, YouAppi, Kayzen)
 
 ✅ **Extreme Package Compression** - Built-in WebP image compression engine with Base122 encoding (reduces data expansion from ~33% with Base64 to ~14%), helping your ads easily meet platform file size limits
 
@@ -164,7 +166,7 @@ After completing SDK integration, just 4 steps to build your playable ads:
 
 1. Click the "Settings" button next to the product to open the product management interface
 2. Add or select your product
-3. Configure the Apple Store and Google Play store links for your product (used for ad redirects)
+3. Configure the Apple URL and Google Play URL for your product (used for ad redirects and platform configuration)
 
 ### Step 4: Select Channels and Build
 
@@ -176,7 +178,7 @@ After completing SDK integration, just 4 steps to build your playable ads:
 3. Click the "Build" button
 4. After building, check the generated ad files in the output directory
 
-> 💡 **Tip**: Some channels (like Facebook, Google, TikTok) output ZIP packages, while others output single HTML files.
+> 💡 **Tip**: Some channels (like Facebook, Google, TikTok, Unity Playworks) output ZIP packages, while others output single HTML files.
 
 ## Image Compression
 
@@ -257,3 +259,28 @@ If you have any questions or feedback, feel free to contact me via:
 -   WeChat
 
     <img src="wechat.jpg" alt="WeChat" title="WeChat" style="width: 25%;">
+
+## Changelog
+
+> Due to the lengthy Cocos Store review process, the store version may lag behind the trial version. To get the latest build, contact us as described in [Get Bingo](#get-bingo).
+
+### 2.0.4
+
+- **New "Generic MRAID" channel**: a single output runs on any MRAID-compliant long-tail platform (e.g. Aarki, Adikteev, BigaBid, YouAppi, Kayzen), with no need to build separately for each one
+- **New "Unity Playworks (Luna)" channel**: automatically exports a Playworks-ready ZIP containing `source.html`, `luna.json`, and `playground.json`, with `startGame` boot gating, CTA, and GameEnded API support
+- **New channels**: InMobi, Kuaishou, Kwai, MyTarget, OceanEngine, Pangle, Snapchat, Vungle / Liftoff
+- **Improved**: unified lifecycle behavior across MRAID channels (AppLovin, Chartboost, InMobi, etc.) — background pause/resume, platform mute, orientation handling — now consistent with the Unity channel
+- **Improved**: product configuration now uses **Apple URL** consistently and maps it to Unity Playworks `iosLink`
+- **Fixed**: playables using Spine animation getting stuck on splash loading or showing a black screen in the Unity / AppLovin test apps
+- **Fixed**: InMobi store-redirect logic; updated Tencent (GDT) SDK URL
+- **Removed**: AdColony (merged into the Digital Turbine ecosystem; no longer offered separately)
+
+### 2.0.3
+
+- Added MRAID support for the Unity channel and improved SDK robustness
+- Improved `mraid.open` redirect and app-store URL selection logic
+- Expanded the SDK integration guide and product documentation
+
+### 2.0.2
+
+- Early release establishing the core capabilities: one-click multi-channel builds, image compression, and Base122 asset embedding
