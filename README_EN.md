@@ -78,7 +78,7 @@ _Clear overview of ad channel material specifications_
 
 ### Full Version
 
-[Get Bingo App Now](https://store.cocos.com/app/detail/7593) - Go to Cocos Store to purchase and download
+[Get Bingo App Now](https://store.cocos.com/app/en/detail/8893) - Go to Cocos Store to purchase and download
 
 > 💡 **Version Update Notice**: Due to the lengthy review process on Cocos Store, the store version may have some delay. If you find that the store version is not the latest, you can proceed with the purchase and then contact us via email (458264325@qq.com) or WeChat with your payment receipt screenshot to receive the same latest version as the trial version.
 
